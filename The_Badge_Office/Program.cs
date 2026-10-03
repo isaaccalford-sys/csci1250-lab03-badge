@@ -43,3 +43,11 @@ System.Console.WriteLine($"Initials: {initalsUppercase}");
 System.Console.WriteLine($"Letters in last name: {lettersInLastName}");
 System.Console.WriteLine();
 
+// Part 2: The Numbers
+Random rng = new Random();
+
+int studentId = rng.Next(100000, 1000000);
+int lockerNumber = rng.Next(1, 501);
+
+System.Console.WriteLine($"Student ID: {studentId}");
+System.Console.WriteLine($"Locker: {lockerNumber}");
