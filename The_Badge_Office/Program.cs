@@ -6,7 +6,9 @@
 * Discription:
 */
 
-// Part 1: The Name
+const int secondsInMinute = 60;
+
+//Part 1: The Name
 
 //Getting user's name
 System.Console.Write("What is your full name? ");
@@ -95,8 +97,8 @@ double distance = Math.Sqrt(xAndYCombinedTotal);
 double walkingTimeInSeconds = distance / walkingSpeed;
 double roundedWalkingTimeInSeconds = Math.Round(walkingTimeInSeconds, 0);
 
-int minutes = (int)roundedWalkingTimeInSeconds / 60;
-int seconds = (int)roundedWalkingTimeInSeconds % 60;
+int minutes = (int)roundedWalkingTimeInSeconds / secondsInMinute;
+int seconds = (int)roundedWalkingTimeInSeconds % secondsInMinute;
 
 
 //Printing answers
@@ -104,3 +106,22 @@ System.Console.WriteLine();
 System.Console.WriteLine($"Distance: {distance.ToString("F1")} feet");
 System.Console.WriteLine($"Walk time: {minutes} minutes {seconds} seconds ");
 System.Console.WriteLine();
+
+
+//Part 4: The Badge
+
+//Math for ID
+int idCheckDigit = (int)studentId % 9;
+
+//Print Values
+System.Console.WriteLine(new string('=',34));
+System.Console.WriteLine("ETSU STUDENT BADGE".PadLeft(26));
+System.Console.WriteLine(new string('=',34));
+
+System.Console.WriteLine("NAME".PadRight(10) + fullNameUpperCase);
+System.Console.WriteLine("USERNAME".PadRight(10) + userNameLowwerCase);
+System.Console.WriteLine("ID".PadRight(10) + studentId + "-" + idCheckDigit);
+System.Console.WriteLine("LOCKER".PadRight(10) + lockerNumber);
+System.Console.WriteLine("Walk".PadRight(10) + minutes + " " + "min" + " " + seconds + " " + "sec");
+
+System.Console.WriteLine(new string('=',34));
