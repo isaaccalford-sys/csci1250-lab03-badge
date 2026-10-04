@@ -36,7 +36,7 @@ string initalsUppercase = initals.ToUpper();
 int lettersInLastName = lastName.Length;
 
 
-//printing answers
+//Printing answers
 System.Console.WriteLine($"Name on badge: {fullNameUpperCase}");
 System.Console.WriteLine($"Username: {userNameLowwerCase}");
 System.Console.WriteLine($"Initials: {initalsUppercase}");
@@ -49,5 +49,58 @@ Random rng = new Random();
 int studentId = rng.Next(100000, 1000000);
 int lockerNumber = rng.Next(1, 501);
 
+
+//Printing answers
 System.Console.WriteLine($"Student ID: {studentId}");
 System.Console.WriteLine($"Locker: {lockerNumber}");
+System.Console.WriteLine();
+
+
+//Part 3: The Walk 
+
+//Dorm
+System.Console.Write("What is the x Cordinate of your dorm? ");
+double dormXValue = Convert.ToDouble(Console.ReadLine());
+
+System.Console.Write("What is the y Cordinate of your dorm? ");
+double dormYValue = Convert.ToDouble(Console.ReadLine());
+
+
+//Classroom
+System.Console.Write("What is the x Cordinate of your classroom? ");
+double classroomXValue = Convert.ToDouble(Console.ReadLine());
+
+System.Console.Write("What is the y Cordinate of your classroom? ");
+double classroomYValue = Convert.ToDouble(Console.ReadLine());
+
+
+//Student speed
+System.Console.Write("What is your walking speed in feet per second? ");
+double walkingSpeed = Convert.ToDouble(Console.ReadLine());
+
+
+//Math for distance
+double xTotalForSubtraction = classroomXValue - dormXValue;
+double xTotalForPower = Math.Pow(xTotalForSubtraction, 2);
+
+
+double yTotalForSubtraction = classroomYValue - dormYValue;
+double yTotalForPower = Math.Pow(yTotalForSubtraction, 2);
+
+double xAndYCombinedTotal= xTotalForPower + yTotalForPower;
+double distance = Math.Sqrt(xAndYCombinedTotal);
+
+
+//Math for walking speed
+double walkingTimeInSeconds = distance / walkingSpeed;
+double roundedWalkingTimeInSeconds = Math.Round(walkingTimeInSeconds, 0);
+
+int minutes = (int)roundedWalkingTimeInSeconds / 60;
+int seconds = (int)roundedWalkingTimeInSeconds % 60;
+
+
+//Printing answers
+System.Console.WriteLine();
+System.Console.WriteLine($"Distance: {distance.ToString("F1")} feet");
+System.Console.WriteLine($"Walk time: {minutes} minutes {seconds} seconds ");
+System.Console.WriteLine();
